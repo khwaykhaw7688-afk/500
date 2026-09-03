@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/assets/fonts/SpaceGrotesk.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/assets/fonts/DMSans.woff2") format("woff2");
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --font-display: "Space Grotesk", sans-serif;
+    --font-body: "DM Sans", sans-serif;
+    --font-mono: "Geist Mono", monospace;
+    --radius: 0.75rem;
+
+    /* Paper (light) — warm rice paper */
+    --background: 0.97 0.012 75;
+    --foreground: 0.22 0.02 40;
+    --card: 0.995 0.006 75;
+    --card-foreground: 0.22 0.02 40;
+    --popover: 0.995 0.006 75;
+    --popover-foreground: 0.22 0.02 40;
+
+    --primary: 0.5 0.19 27;
+    --primary-foreground: 0.97 0.01 27;
+
+    --secondary: 0.94 0.015 75;
+    --secondary-foreground: 0.3 0.02 40;
+    --muted: 0.94 0.015 75;
+    --muted-foreground: 0.5 0.015 45;
+
+    --accent: 0.62 0.12 70;
+    --accent-foreground: 0.97 0.01 70;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.98 0.005 25;
+    --success: 0.55 0.16 150;
+    --warning: 0.68 0.15 85;
+
+    --border: 0.9 0.015 75;
+    --input: 0.9 0.015 75;
+    --ring: 0.5 0.19 27;
+
+    --chart-1: 0.5 0.19 27;
+    --chart-2: 0.62 0.12 70;
+    --chart-3: 0.55 0.16 150;
+    --chart-4: 0.42 0.14 240;
+    --chart-5: 0.72 0.15 85;
+
+    --sidebar: 0.94 0.015 75;
+    --sidebar-foreground: 0.22 0.02 40;
+    --sidebar-primary: 0.5 0.19 27;
+    --sidebar-primary-foreground: 0.97 0.01 27;
+    --sidebar-accent: 0.9 0.015 75;
+    --sidebar-accent-foreground: 0.3 0.02 40;
+    --sidebar-border: 0.9 0.015 75;
+    --sidebar-ring: 0.5 0.19 27;
+
+    /* Signature gradients */
+    --gradient-primary: linear-gradient(
+      135deg,
+      oklch(0.5 0.19 27),
+      oklch(0.62 0.12 70)
+    );
+    --gradient-subtle: linear-gradient(
+      180deg,
+      oklch(0.995 0.006 75),
+      oklch(0.94 0.015 75)
+    );
+  }
+
+  .dark {
+    /* Ink night — warm dark charcoal */
+    --background: 0.145 0.02 25;
+    --foreground: 0.93 0.01 60;
+    --card: 0.19 0.02 25;
+    --card-foreground: 0.93 0.01 60;
+    --popover: 0.19 0.02 25;
+    --popover-foreground: 0.93 0.01 60;
+
+    --primary: 0.62 0.19 27;
+    --primary-foreground: 0.15 0.02 27;
+
+    --secondary: 0.23 0.02 25;
+    --secondary-foreground: 0.85 0.01 60;
+    --muted: 0.23 0.02 25;
+    --muted-foreground: 0.55 0.01 55;
+
+    --accent: 0.72 0.14 70;
+    --accent-foreground: 0.15 0.02 70;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.95 0.01 25;
+    --success: 0.6 0.16 150;
+    --warning: 0.72 0.15 85;
+
+    --border: 0.28 0.02 25;
+    --input: 0.28 0.02 25;
+    --ring: 0.62 0.19 27;
+
+    --chart-1: 0.62 0.19 27;
+    --chart-2: 0.72 0.14 70;
+    --chart-3: 0.6 0.16 150;
+    --chart-4: 0.42 0.14 240;
+    --chart-5: 0.72 0.15 85;
+
+    --sidebar: 0.19 0.02 25;
+    --sidebar-foreground: 0.93 0.01 60;
+    --sidebar-primary: 0.62 0.19 27;
+    --sidebar-primary-foreground: 0.15 0.02 27;
+    --sidebar-accent: 0.23 0.02 25;
+    --sidebar-accent-foreground: 0.85 0.01 60;
+    --sidebar-border: 0.28 0.02 25;
+    --sidebar-ring: 0.62 0.19 27;
+
+    --gradient-primary: linear-gradient(
+      135deg,
+      oklch(0.62 0.19 27),
+      oklch(0.72 0.14 70)
+    );
+    --gradient-subtle: linear-gradient(
+      180deg,
+      oklch(0.19 0.02 25),
+      oklch(0.145 0.02 25)
+    );
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bg-gradient-primary {
+    background-image: var(--gradient-primary);
+  }
+  .bg-gradient-subtle {
+    background-image: var(--gradient-subtle);
+  }
+}

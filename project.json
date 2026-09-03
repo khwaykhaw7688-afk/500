@@ -1,0 +1,17 @@
+{
+  "overview": "A Chinese vocabulary learning app (UI in Thai) with a 500-word deck, tap-to-flip flashcards with audio, and a 10-question stroke-order writing quiz.",
+  "features": [
+    "Browse a searchable 500-word Chinese vocabulary deck with pinyin and Thai meanings",
+    "Flip flashcards to reveal translations with pronunciation audio",
+    "Practice stroke order with a 10-question scored writing quiz",
+    "View stroke-order animations for each character"
+  ],
+  "category": "learning-app",
+  "tags": [
+    "education",
+    "language-learning",
+    "chinese",
+    "flashcards"
+  ],
+  "last_updated": "2026-09-03T15:17:58.875Z"
+}
